@@ -658,6 +658,7 @@
 		B277241D1EAE97D700375C53 /* MSALStressTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSALStressTestHelper.m; sourceTree = "<group>"; };
 		B28BDA8C217E9EAB003E5670 /* MSALOauth2FactoryProducer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSALOauth2FactoryProducer.h; sourceTree = "<group>"; };
 		B28BDA8D217E9EAB003E5670 /* MSALOauth2FactoryProducer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSALOauth2FactoryProducer.m; sourceTree = "<group>"; };
+		B28E4B4A2233796B00ED798A /* buildStaticFramework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = buildStaticFramework.sh; sourceTree = "<group>"; };
 		B29E2AC421238E0000B170ED /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
 		B29E2AC821238F2200B170ED /* MSALNonUnifiedADALCoexistenceCacheTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSALNonUnifiedADALCoexistenceCacheTests.m; sourceTree = "<group>"; };
 		B29E2ACE21238F5200B170ED /* MultiAppiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiAppiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1052,6 +1053,14 @@
 				B25F1BC31EC3E44500474D1B /* MSALResult+Automation.m */,
 			);
 			path = util;
+			sourceTree = "<group>";
+		};
+		B28E4B492233793800ED798A /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				B28E4B4A2233796B00ED798A /* buildStaticFramework.sh */,
+			);
+			path = scripts;
 			sourceTree = "<group>";
 		};
 		B2BB737F2112C351000EA4C5 /* tests */ = {
@@ -1503,6 +1512,7 @@
 		D6DFF3991E2579360012891A = {
 			isa = PBXGroup;
 			children = (
+				B28E4B492233793800ED798A /* scripts */,
 				231CE9E01FECBD4600E95D3E /* unit-test-host.entitlements */,
 				D6A206191FC50A4D00755A51 /* IdentityCore.xcodeproj */,
 				D65A6F671E3FF3D900C69FBA /* src */,
@@ -1960,7 +1970,6 @@
 			targets = (
 				D65A6F421E3FD30A00C69FBA /* MSAL (iOS Framework) */,
 				D65A6FC01E3FF47D00C69FBA /* MSAL iOS Unit Tests */,
-				B2A6F1C722306562008362F8 /* MSAL */,
 				D65A6F4F1E3FD32D00C69FBA /* MSAL (Mac Framework) */,
 				D65A6FCF1E3FF49C00C69FBA /* MSAL Mac Unit Tests */,
 				D61A64321E5A29580086D120 /* MSAL Test App (iOS) */,
@@ -1969,6 +1978,7 @@
 				D672279E1EBD111900F3422A /* unit-test-host */,
 				B2BB736F2112C32C000EA4C5 /* InteractiveiOSTests */,
 				B29E2ACD21238F5200B170ED /* MultiAppiOSTests */,
+				B2A6F1C722306562008362F8 /* MSAL */,
 				B269A85A22332C05003F859A /* MSAL Static Distribution */,
 			);
 		};
@@ -2147,7 +2157,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\n# Sets the target folders and the final framework product.\nFMK_NAME=MSAL\nTGT_NAME=${FMK_NAME}\n\necho \"Building ${FMK_NAME} iOS static framework.\"\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nPRODUCTS_DIR=${SRCROOT}/../FooBar/iOS\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator\n\n# Make sure we're inside $SRCROOT.\ncd \"${SRCROOT}\"\n\n# Cleaning previous build.\nxcodebuild -project \"${FMK_NAME}.xcodeproj\" -configuration \"Release\" -target \"${TGT_NAME}\" clean\n\n# Building both architectures.\nxcodebuild -project \"${FMK_NAME}.xcodeproj\" -configuration \"Release\" -target \"${TGT_NAME}\" -sdk iphoneos\nxcodebuild -project \"${FMK_NAME}.xcodeproj\" -configuration \"Release\" -target \"${TGT_NAME}\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${PRODUCTS_DIR}\" ]\nthen\nrm -rf \"${PRODUCTS_DIR}\"\nfi\n\nmkdir -p $PRODUCTS_DIR\n\n# Copy the swift import file\ncp -R $DEVICE_DIR $PRODUCTS_DIR\n\n# Create the arm64e slice in Xcode 10.1 and lipo it with the device binary that was created with oldest supported Xcode version.\nLIB_IPHONEOS_FINAL=\"${PRODUCTS_DIR}/Release-iphoneos/${FMK_NAME}.framework/${FMK_NAME}\"\n#if [ -z \"$MS_ARM64E_XCODE_PATH\" ] || [ ! -d \"$MS_ARM64E_XCODE_PATH\" ]; then\n#echo \"Environment variable MS_ARM64E_XCODE_PATH not set or not a valid path.\"\n\necho \"Use current Xcode version and lipo -create the fat binary.\"\nlipo -create \"${LIB_IPHONEOS_FINAL}\" \"${SIMULATOR_DIR}/${FMK_NAME}.framework/${FMK_NAME}\" -output \"${PRODUCTS_DIR}/${FMK_NAME}\"\n\n";
+			shellScript = "cd \"${SRCROOT}/scripts\"\n\n#!/bin/sh\n./buildStaticFramework.sh\n";
 		};
 		B29E2AD821238F6C00B170ED /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
