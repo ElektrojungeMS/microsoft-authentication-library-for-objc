@@ -658,7 +658,8 @@
 		B277241D1EAE97D700375C53 /* MSALStressTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSALStressTestHelper.m; sourceTree = "<group>"; };
 		B28BDA8C217E9EAB003E5670 /* MSALOauth2FactoryProducer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSALOauth2FactoryProducer.h; sourceTree = "<group>"; };
 		B28BDA8D217E9EAB003E5670 /* MSALOauth2FactoryProducer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSALOauth2FactoryProducer.m; sourceTree = "<group>"; };
-		B28E4B4A2233796B00ED798A /* buildStaticFramework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = buildStaticFramework.sh; sourceTree = "<group>"; };
+		B28E4B4A2233796B00ED798A /* buildMSALStaticFramework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = buildMSALStaticFramework.sh; sourceTree = "<group>"; };
+		B28E4B4B22338E6400ED798A /* buildIdentityCoreFatFramework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = buildIdentityCoreFatFramework.sh; sourceTree = "<group>"; };
 		B29E2AC421238E0000B170ED /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.4.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
 		B29E2AC821238F2200B170ED /* MSALNonUnifiedADALCoexistenceCacheTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSALNonUnifiedADALCoexistenceCacheTests.m; sourceTree = "<group>"; };
 		B29E2ACE21238F5200B170ED /* MultiAppiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiAppiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1058,7 +1059,8 @@
 		B28E4B492233793800ED798A /* scripts */ = {
 			isa = PBXGroup;
 			children = (
-				B28E4B4A2233796B00ED798A /* buildStaticFramework.sh */,
+				B28E4B4A2233796B00ED798A /* buildMSALStaticFramework.sh */,
+				B28E4B4B22338E6400ED798A /* buildIdentityCoreFatFramework.sh */,
 			);
 			path = scripts;
 			sourceTree = "<group>";
@@ -2157,7 +2159,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"${SRCROOT}/scripts\"\n\n#!/bin/sh\n./buildStaticFramework.sh\n";
+			shellScript = "cd \"${SRCROOT}/scripts\"\n\n#!/bin/sh\n./buildIdentityCoreFatFramework.sh\n./buildMSALStaticFramework.sh\n";
 		};
 		B29E2AD821238F6C00B170ED /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

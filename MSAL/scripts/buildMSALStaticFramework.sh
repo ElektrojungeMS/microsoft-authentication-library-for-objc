@@ -48,3 +48,10 @@ lipo -create "${DEVICE_DIR}/${FMK_NAME}.framework/${FMK_NAME}" "${SIMULATOR_DIR}
 
 # Delete the build directory
 rm -rf "${WRK_DIR}"
+
+# Add IdentityCore.
+if [ -z $(otool -L "LIB_IPHONEOS_FINAL" | grep 'libIdentityCore') ]
+then
+libtool -static  "${LIB_IPHONEOS_FINAL}" "${SRCROOT}/IdentityCore/IdentityCore/IdentityCore Static Framework/iOS/libIdentityCore.a" -o "${LIB_IPHONEOS_FINAL}"
+fi
+
