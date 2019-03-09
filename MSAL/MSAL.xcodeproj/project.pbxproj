@@ -1702,9 +1702,9 @@
 			productReference = B29E2ACE21238F5200B170ED /* MultiAppiOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		B2A6F1C722306562008362F8 /* MSAL */ = {
+		B2A6F1C722306562008362F8 /* MSAL (Static iOS Framework) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B2A6F20722306562008362F8 /* Build configuration list for PBXNativeTarget "MSAL" */;
+			buildConfigurationList = B2A6F20722306562008362F8 /* Build configuration list for PBXNativeTarget "MSAL (Static iOS Framework)" */;
 			buildPhases = (
 				B2A6F1CA22306562008362F8 /* Sources */,
 				B2A6F1E722306562008362F8 /* Frameworks */,
@@ -1716,7 +1716,7 @@
 			dependencies = (
 				B2A6F1C822306562008362F8 /* PBXTargetDependency */,
 			);
-			name = MSAL;
+			name = "MSAL (Static iOS Framework)";
 			productName = "MSAL (Framework)";
 			productReference = B2A6F20A22306562008362F8 /* MSAL.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1978,7 +1978,7 @@
 				D672279E1EBD111900F3422A /* unit-test-host */,
 				B2BB736F2112C32C000EA4C5 /* InteractiveiOSTests */,
 				B29E2ACD21238F5200B170ED /* MultiAppiOSTests */,
-				B2A6F1C722306562008362F8 /* MSAL */,
+				B2A6F1C722306562008362F8 /* MSAL (Static iOS Framework) */,
 				B269A85A22332C05003F859A /* MSAL Static Distribution */,
 			);
 		};
@@ -2760,7 +2760,7 @@
 				INFOPLIST_FILE = resources/ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACH_O_TYPE = staticlib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MSAL;
 			};
 			name = Debug;
 		};
@@ -2780,7 +2780,7 @@
 				INFOPLIST_FILE = resources/ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACH_O_TYPE = staticlib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MSAL;
 			};
 			name = Release;
 		};
@@ -3130,7 +3130,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B2A6F20722306562008362F8 /* Build configuration list for PBXNativeTarget "MSAL" */ = {
+		B2A6F20722306562008362F8 /* Build configuration list for PBXNativeTarget "MSAL (Static iOS Framework)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B2A6F20822306562008362F8 /* Debug */,
