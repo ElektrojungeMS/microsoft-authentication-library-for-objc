@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		B269A85A22332C05003F859A /* MSAL Static Distribution */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B269A85B22332C05003F859A /* Build configuration list for PBXAggregateTarget "MSAL Static Distribution" */;
+			buildPhases = (
+				B269A85E22332C23003F859A /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "MSAL Static Distribution";
+			productName = FOoBar;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		04D32CAE1FD615B3000B123E /* MSALErrorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D32CAD1FD615B3000B123E /* MSALErrorConverter.m */; };
 		04D32CAF1FD615B3000B123E /* MSALErrorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D32CAD1FD615B3000B123E /* MSALErrorConverter.m */; };
@@ -649,7 +663,7 @@
 		B29E2ACE21238F5200B170ED /* MultiAppiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiAppiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A3C2872145FD0F0082525C /* MSALAccountsProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSALAccountsProvider.h; sourceTree = "<group>"; };
 		B2A3C2882145FD0F0082525C /* MSALAccountsProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSALAccountsProvider.m; sourceTree = "<group>"; };
-		B2A6F20A22306562008362F8 /* MSAL (iOS Static Framework).framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "MSAL (iOS Static Framework).framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2A6F20A22306562008362F8 /* MSAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MSAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2AD63481EA5663800EFEEF1 /* MSALTestAppTelemetryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSALTestAppTelemetryViewController.h; sourceTree = "<group>"; };
 		B2AD63491EA5663800EFEEF1 /* MSALTestAppTelemetryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSALTestAppTelemetryViewController.m; sourceTree = "<group>"; };
 		B2AD634B1EA5665F00EFEEF1 /* MSALTestAppTelemetryDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSALTestAppTelemetryDispatcher.h; sourceTree = "<group>"; };
@@ -1513,7 +1527,7 @@
 				D672279F1EBD111900F3422A /* unit-test-host.app */,
 				B2BB73702112C32C000EA4C5 /* InteractiveiOSTests.xctest */,
 				B29E2ACE21238F5200B170ED /* MultiAppiOSTests.xctest */,
-				B2A6F20A22306562008362F8 /* MSAL (iOS Static Framework).framework */,
+				B2A6F20A22306562008362F8 /* MSAL.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1678,9 +1692,9 @@
 			productReference = B29E2ACE21238F5200B170ED /* MultiAppiOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		B2A6F1C722306562008362F8 /* MSAL (iOS Static Framework) */ = {
+		B2A6F1C722306562008362F8 /* MSAL */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B2A6F20722306562008362F8 /* Build configuration list for PBXNativeTarget "MSAL (iOS Static Framework)" */;
+			buildConfigurationList = B2A6F20722306562008362F8 /* Build configuration list for PBXNativeTarget "MSAL" */;
 			buildPhases = (
 				B2A6F1CA22306562008362F8 /* Sources */,
 				B2A6F1E722306562008362F8 /* Frameworks */,
@@ -1692,9 +1706,9 @@
 			dependencies = (
 				B2A6F1C822306562008362F8 /* PBXTargetDependency */,
 			);
-			name = "MSAL (iOS Static Framework)";
+			name = MSAL;
 			productName = "MSAL (Framework)";
-			productReference = B2A6F20A22306562008362F8 /* MSAL (iOS Static Framework).framework */;
+			productReference = B2A6F20A22306562008362F8 /* MSAL.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B2BB736F2112C32C000EA4C5 /* InteractiveiOSTests */ = {
@@ -1867,6 +1881,10 @@
 							};
 						};
 					};
+					B269A85A22332C05003F859A = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
 					B29E2ACD21238F5200B170ED = {
 						CreatedOnToolsVersion = 9.4.1;
 						DevelopmentTeam = UBF8T346G9;
@@ -1942,7 +1960,7 @@
 			targets = (
 				D65A6F421E3FD30A00C69FBA /* MSAL (iOS Framework) */,
 				D65A6FC01E3FF47D00C69FBA /* MSAL iOS Unit Tests */,
-				B2A6F1C722306562008362F8 /* MSAL (iOS Static Framework) */,
+				B2A6F1C722306562008362F8 /* MSAL */,
 				D65A6F4F1E3FD32D00C69FBA /* MSAL (Mac Framework) */,
 				D65A6FCF1E3FF49C00C69FBA /* MSAL Mac Unit Tests */,
 				D61A64321E5A29580086D120 /* MSAL Test App (iOS) */,
@@ -1951,6 +1969,7 @@
 				D672279E1EBD111900F3422A /* unit-test-host */,
 				B2BB736F2112C32C000EA4C5 /* InteractiveiOSTests */,
 				B29E2ACD21238F5200B170ED /* MultiAppiOSTests */,
+				B269A85A22332C05003F859A /* MSAL Static Distribution */,
 			);
 		};
 /* End PBXProject section */
@@ -2113,6 +2132,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B269A85E22332C23003F859A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\n# Sets the target folders and the final framework product.\nFMK_NAME=MSAL\nTGT_NAME=${FMK_NAME}\n\necho \"Building ${FMK_NAME} iOS static framework.\"\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nPRODUCTS_DIR=${SRCROOT}/../FooBar/iOS\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator\n\n# Make sure we're inside $SRCROOT.\ncd \"${SRCROOT}\"\n\n# Cleaning previous build.\nxcodebuild -project \"${FMK_NAME}.xcodeproj\" -configuration \"Release\" -target \"${TGT_NAME}\" clean\n\n# Building both architectures.\nxcodebuild -project \"${FMK_NAME}.xcodeproj\" -configuration \"Release\" -target \"${TGT_NAME}\" -sdk iphoneos\nxcodebuild -project \"${FMK_NAME}.xcodeproj\" -configuration \"Release\" -target \"${TGT_NAME}\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${PRODUCTS_DIR}\" ]\nthen\nrm -rf \"${PRODUCTS_DIR}\"\nfi\n\nmkdir -p $PRODUCTS_DIR\n\n# Copy the swift import file\ncp -R $DEVICE_DIR $PRODUCTS_DIR\n\n# Create the arm64e slice in Xcode 10.1 and lipo it with the device binary that was created with oldest supported Xcode version.\nLIB_IPHONEOS_FINAL=\"${PRODUCTS_DIR}/Release-iphoneos/${FMK_NAME}.framework/${FMK_NAME}\"\n#if [ -z \"$MS_ARM64E_XCODE_PATH\" ] || [ ! -d \"$MS_ARM64E_XCODE_PATH\" ]; then\n#echo \"Environment variable MS_ARM64E_XCODE_PATH not set or not a valid path.\"\n\necho \"Use current Xcode version and lipo -create the fat binary.\"\nlipo -create \"${LIB_IPHONEOS_FINAL}\" \"${SIMULATOR_DIR}/${FMK_NAME}.framework/${FMK_NAME}\" -output \"${PRODUCTS_DIR}/${FMK_NAME}\"\n\n";
+		};
 		B29E2AD821238F6C00B170ED /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2551,6 +2587,24 @@
 			};
 			name = Release;
 		};
+		B269A85C22332C05003F859A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B269A85D22332C05003F859A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		B29E2AD621238F5200B170ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B2BB73962112C4B3000EA4C5 /* msal__ui_test__ios.xcconfig */;
@@ -2688,6 +2742,7 @@
 					arm64e,
 					armv7s,
 				);
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
@@ -2708,6 +2763,7 @@
 					arm64e,
 					armv7s,
 				);
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
@@ -3046,6 +3102,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B269A85B22332C05003F859A /* Build configuration list for PBXAggregateTarget "MSAL Static Distribution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B269A85C22332C05003F859A /* Debug */,
+				B269A85D22332C05003F859A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B29E2AD521238F5200B170ED /* Build configuration list for PBXNativeTarget "MultiAppiOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -3055,7 +3120,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B2A6F20722306562008362F8 /* Build configuration list for PBXNativeTarget "MSAL (iOS Static Framework)" */ = {
+		B2A6F20722306562008362F8 /* Build configuration list for PBXNativeTarget "MSAL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B2A6F20822306562008362F8 /* Debug */,
