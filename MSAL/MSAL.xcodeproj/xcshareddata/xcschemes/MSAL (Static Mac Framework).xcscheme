@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B269A85A22332C05003F859A"
-               BuildableName = "MSAL Static iOS Distribution"
-               BlueprintName = "MSAL Static iOS Distribution"
+               BlueprintIdentifier = "1A43469D223722D5008262EB"
+               BuildableName = "MSAL (Static Mac Framework).framework"
+               BlueprintName = "MSAL (Static Mac Framework)"
                ReferencedContainer = "container:MSAL.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B269A85A22332C05003F859A"
-            BuildableName = "MSAL Static iOS Distribution"
-            BlueprintName = "MSAL Static iOS Distribution"
+            BlueprintIdentifier = "1A43469D223722D5008262EB"
+            BuildableName = "MSAL (Static Mac Framework).framework"
+            BlueprintName = "MSAL (Static Mac Framework)"
             ReferencedContainer = "container:MSAL.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B269A85A22332C05003F859A"
-            BuildableName = "MSAL Static iOS Distribution"
-            BlueprintName = "MSAL Static iOS Distribution"
+            BlueprintIdentifier = "1A43469D223722D5008262EB"
+            BuildableName = "MSAL (Static Mac Framework).framework"
+            BlueprintName = "MSAL (Static Mac Framework)"
             ReferencedContainer = "container:MSAL.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
